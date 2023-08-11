@@ -98,18 +98,38 @@ nav{width: 50%; height: 100%;}
     position: fixed;
     z-index: -1;
 }
-.typing{
-    display: inline; vertical-align: middle;
-    border-right: .05em solid #fff;
-    animation:  cursor 0.2s ease infinite;
-    font-size: 24px;
-    color: #fff;
-  }
-  @keyframes cursor {
-   0% {border-color:transparent;}
-   100%{border-right: .05em solid #fff;}
-  }
+.typing-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+.typing {
+  font-size: 18px;
+  border-right: 2px solid #333;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+      border-color: transparent;
+  }
+  50% {
+      border-color: #333;
+  }
+}
   .arrow{
     position: absolute;
     bottom: 10%;
@@ -204,6 +224,7 @@ nav{width: 50%; height: 100%;}
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    justify-content: center;
   }
  
 
@@ -211,7 +232,8 @@ nav{width: 50%; height: 100%;}
   #career{
     /* width: 100vw; */
     height: auto;
-    background-color: #48b379;
+    /* background-color: #48b379; */
+    background-color: #38b63c;
     color: #fff;
     padding: 64px 36px;
   }
@@ -224,7 +246,7 @@ nav{width: 50%; height: 100%;}
     font-size: 0.9em; line-height: 20px;
     margin-top: -10px;
 }
-.circle{position: absolute; background-color: #48b379;
+.circle{position: absolute; background-color: #38b63c;
     width: 10px; height: 10px; border-radius: 10px;
     display: block; border: 5px solid #eee9dc;
     left: -44px; top: 50%; margin-top: -8px;
@@ -249,7 +271,7 @@ label{font-size: 1.3em; position: absolute; top: 20px; cursor: pointer;
     border-right-color: inherit;
     top: 56%; margin-top: -20px;
 }
-.content::after{border-right-color:#48b379;
+.content::after{border-right-color:#38b63c;
     border-width: 19px; top: 56%; margin-top: -19px; left: -36px;
 
 }
